@@ -3,18 +3,14 @@ require 'rails_helper'
 describe Contact, type: :model do
 
   it "is valid with a firstname, lastname and email" do
-    contact = Contact.new(
-      firstname: 'Aaron',
-      lastname: 'Sumner',
-      email: 'tester@example.com'
-    )
+    contact = build(:contact)
     expect(contact).to be_valid
   end
 
   it "is invalid without a firstname" do
-    contact = Contact.new(firstname: nil)
+    contact = build(:contact, firstname: nil)
     contact.valid?
-    expect(contact.errors[:firstname]).to include("can't be blank")
+    expect(contact.errors[:firstname]).not_to include("can't be blank")
   end
 
   it "returns a contact's full name as a string" do

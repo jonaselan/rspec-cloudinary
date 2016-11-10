@@ -1,5 +1,4 @@
 class Phone < ApplicationRecord
-  belongs_to :Contact
-
+  belongs_to :contact
   validates :phone, uniqueness: { scope: :contact_id }
 end
