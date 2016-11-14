@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: ddr5thmbs
+  api_key: '192783733366486'
+  api_secret: 1aZla-sJ1fE8JAB691lAyq-MO1I
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: ddr5thmbs
+  api_key: '192783733366486'
+  api_secret: 1aZla-sJ1fE8JAB691lAyq-MO1I
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: ddr5thmbs
+  api_key: '192783733366486'
+  api_secret: 1aZla-sJ1fE8JAB691lAyq-MO1I
+  enhance_image_tag: true
+  static_image_support: false
