@@ -16,13 +16,8 @@
   </div>
 
   <div class="field">
-    <%= f.label :image %>
-    <%= f.text_field :image %>
-  </div>
-
-  <div class="field">
-    <%= f.label :video %>
-    <%= f.text_field :video %>
+    <%= f.hidden_field(:image_cache)  %>
+    <%= f.file_field(:image) %>
   </div>
 
   <div class="actions">

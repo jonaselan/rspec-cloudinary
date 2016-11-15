@@ -1,5 +1,6 @@
 class Contact < ActiveRecord::Base
   has_many :phones
+  mount_uploader :image, ImageUploader
 
   accepts_nested_attributes_for :phones
 

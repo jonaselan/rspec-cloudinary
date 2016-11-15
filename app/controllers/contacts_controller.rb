@@ -15,6 +15,7 @@ class ContactsController < ApplicationController
 
   def create
     @contact = Contact.new(contact_params)
+    @contact.image = params[:image]
 
     respond_to do |format|
       if @contact.save
