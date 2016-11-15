@@ -16,8 +16,8 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new(contact_params)
     @contact.image = params[:image]
-    # Cloudinary::Uploader.upload(params[:image])
-
+    @contact.video = params[:video]
+  
     respond_to do |format|
       if @contact.save
         format.html { redirect_to @contact, notice: 'Contact was successfully created.' }

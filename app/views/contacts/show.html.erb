@@ -1,23 +1,29 @@
-<p id="notice"><%= notice %></p>
+<div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @contact.firstname %>
-</p>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>lastname:</strong>
-  <%= @contact.lastname %>
-</p>
+  <p>
+    <strong>Name:</strong>
+    <%= @contact.firstname %>
+  </p>
 
-<p>
-  <strong>Image: </strong>
-  <a href="<%= @contact.image.url %>" target="_blank">
-    <%= image_tag(@contact.image.thumbnail.url) %>
-  </a>
-</p>
+  <p>
+    <strong>lastname:</strong>
+    <%= @contact.lastname %>
+  </p>
 
+  <p>
+    <strong>Image: </strong>
+    <a href="<%= @contact.image.url %>" target="_blank">
+      <%= image_tag(@contact.image.thumbnail.url) %>
+    </a>
+  </p>
 
+  <p>
+    <strong>Video: </strong>
+      <%= video_tag(@contact.video.thumbnail.url) %>
+  </p>
 </div>
+
 
 <%= link_to 'Back', contacts_path %>

@@ -1,3 +1,9 @@
+<style>
+  th, td{
+    border: 1px solid black;
+  }
+</style>
+
 <table>
   <thead>
     <tr>
@@ -19,7 +25,11 @@
             <%= image_tag(contact.image.thumbnail.url) %>
           </a>
         </td>
-        <td><%= contact.video %></td>
+        <td>
+          <!-- for download: <contact.video.url> -->
+          <!-- cl_video_tag("i5lccfrzgyam9ffusgi8.3gp") -->
+          <%= video_tag(contact.video) %> 
+        </td>
 
       </tr>
     <% end %>
