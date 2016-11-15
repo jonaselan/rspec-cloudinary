@@ -11,8 +11,13 @@
 </p>
 
 <p>
-  <strong>Image:</strong>
-  <%= @contact.image %>
+  <strong>Image: </strong>
+  <a href="<%= @contact.image.url %>" target="_blank">
+    <%= image_tag(@contact.image.thumbnail.url) %>
+  </a>
 </p>
+
+
+</div>
 
 <%= link_to 'Back', contacts_path %>

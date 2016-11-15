@@ -1,3 +1,29 @@
+<table>
+  <thead>
+    <tr>
+      <th>firstname</th>
+      <th>lastname</th>
+      <th>Image</th>
+      <th>Video</th>
+      <!-- <th colspan="3"></th> -->
+    </tr>
+  </thead>
 
+  <tbody>
+    <% @contacts.each do |contact| %>
+      <tr>
+        <td><%= contact.firstname %></td>
+        <td><%= contact.lastname %></td>
+        <td>
+          <a href="<%= contact.image.url %>" target="_blank">
+            <%= image_tag(contact.image.thumbnail.url) %>
+          </a>
+        </td>
+        <td><%= contact.video %></td>
 
-    <%= link_to 'New Contact', new_contact_path %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New Contact', new_contact_path %>
