@@ -12,7 +12,7 @@ What is used in this project (or i try use)
 ## Media
 
 * Cloudinary
-* Carriewave
+* Carrierwave
 
 
 
