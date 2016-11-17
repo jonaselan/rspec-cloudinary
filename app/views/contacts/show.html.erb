@@ -21,7 +21,12 @@
 
   <p>
     <strong>Video: </strong>
-      <%= video_tag(@contact.video.thumbnail.url) %>
+    <% if !@contact.video.blank? %>
+      <video width="400" controls>
+        <source src="<%= contact.video %>" type="video/mp4">
+          Your browser does not support HTML5 video.
+      </video>
+    <% end %>
   </p>
 </div>
 

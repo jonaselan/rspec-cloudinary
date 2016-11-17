@@ -32,10 +32,12 @@
           <!-- for download: <contact.video.url> -->
           <!-- video_tag(contact.video) -->
            <!-- cl_video_tag(contact.video) -->
-           <video width="400" controls>
-             <source src="<%= contact.video %>" type="video/mp4">
-             Your browser does not support HTML5 video.
-           </video>
+           <% if !contact.video.blank? %>
+             <video width="400" controls>
+               <source src="<%= contact.video %>" type="video/mp4">
+                 Your browser does not support HTML5 video.
+             </video>
+           <% end %>
         </td>
 
       </tr>

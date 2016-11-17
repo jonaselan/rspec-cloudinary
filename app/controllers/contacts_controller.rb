@@ -1,3 +1,5 @@
+require 'pry'
+
 class ContactsController < ApplicationController
 
   before_action :set_contact, only: [:show, :edit, :update, :destroy]
@@ -14,10 +16,11 @@ class ContactsController < ApplicationController
   end
 
   def create
+    binding.pry
     @contact = Contact.new(contact_params)
     @contact.image = params[:image]
     @contact.video = params[:video]
-  
+
     respond_to do |format|
       if @contact.save
         format.html { redirect_to @contact, notice: 'Contact was successfully created.' }
