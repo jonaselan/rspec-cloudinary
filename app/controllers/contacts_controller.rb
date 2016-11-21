@@ -18,8 +18,8 @@ class ContactsController < ApplicationController
   def create
     binding.pry
     @contact = Contact.new(contact_params)
-    @contact.image = params[:image]
-    @contact.video = params[:video]
+    # @contact.image = params[:image]
+    # @contact.video = params[:video]
 
     respond_to do |format|
       if @contact.save
