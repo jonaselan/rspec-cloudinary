@@ -16,19 +16,26 @@ class ContactsController < ApplicationController
   end
 
   def create
-    binding.pry
-    @contact = Contact.new(contact_params)
-    @contact.image = params[:image]
-    @contact.video = params[:video]
+    # binding.pry
+    
+    ## for images
+    contact_params[:files].each do |file|
+      Cloudinary::Uploader.upload(file)
+    end
 
+    ## for image
+    Cloudinary::Uploader.upload(contact_params[:file])
+
+    ## for video
+    Cloudinary::Uploader.upload(contact_params[:file_video], :resource_type => :video)
+
+  end
+
+  def destroy
+    @contact.destroy
     respond_to do |format|
-      if @contact.save
-        format.html { redirect_to @contact, notice: 'Contact was successfully created.' }
-        format.json { render :show, status: :created, location: @contact }
-      else
-        format.html { render :new }
-        format.json { render json: @contact.errors, status: :unprocessable_entity }
-      end
+      format.html { redirect_to contacts_url, notice: 'Contact was successfully destroyed.' }
+      format.json { head :no_content }
     end
   end
 
@@ -39,7 +46,7 @@ class ContactsController < ApplicationController
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def contact_params
-      params.require(:contact).permit(:firstname, :lastname, :email, :image, :video)
+      params.require(:contact).permit(:file, :file_video, {files: []})
     end
 
 end
